@@ -139,15 +139,37 @@
 
       footer {
         background-color: #263238;
-        color: white;
-        font-size: 5px;
+        color: #ffffff;
+        font-size: 12px;
         text-align: center;
-        padding: 20px;
-        margin-top: 20px;
+        padding: 30px 20px;
       }
 
-      footer p {
-        margin: 5px 0;
+      .footer-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .footer-container p {
+        margin: 10px 0;
+        line-height: 1.6;
+      }
+
+      .footer-links {
+        margin-top: 15px;
+      }
+
+      .footer-links a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+        font-size: 0.9em;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+        color: #90caf9;
       }
 
       .disclaimer {
@@ -163,8 +185,8 @@
         <h2>
           Ѕ​р​е​с​і​а​l​і​ѕ​t​ ​R​е​v​е​а​l​ѕ​
           <span class="highlight">​W​а​r​m​ ​W​а​t​е​r​ <br />​R​і​t​u​а​l</span
-          >​ ​t​h​а​t​ <span class="highlight">​R​Е​V​Е​R​Ѕ​Е​Ѕ</span>​
-          <br />​t​у​р​е​ ​2​ ​d​і​а​b​е​t​е​ѕ​
+          >​ ​t​h​а​t​ <span class="highlight">​R​Е​V​Е​R​Ѕ​Е​Ѕ</span>​ <br />
+          ​t​у​р​е​ ​2​ ​d​і​а​b​е​t​е​ѕ​
         </h2>
         <p style="font-size: 0.7rem">
           <strong>Publication Date:</strong> April 15, 2025
@@ -181,31 +203,30 @@
     </main>
 
     <footer>
-      <div class="rodape">
-        Copyright 2024. All rights reserved.
-        <br /><br />
-        This site is not part of TikTok, Inc. or TikTok.com, nor is it sponsored
-        or endorsed by TikTok. TikTok is a trademark of ByteDance, Ltd.
-        <br /><br />
-        Disclaimer: This site is provided for educational purposes only. Always
-        consult a health professional before implementing any strategy discussed
-        here.
-        <br /><br />
-        The author is not engaged in rendering medical or similar professional
-        services and the information provided is not intended to replace medical
-        advice.
-      </div>
-      <div class="container-2" style="color: white">
-        <div class="footer-link">
-          <a href="https://pg.thenatural-health.site/privacy-policy/">
-            >PRIVACY POLICY</a
+      <div class="footer-container">
+        <p>&copy; 2024. All rights reserved.</p>
+
+        <p class="disclaimer">
+          This site is not part of TikTok, Inc. or TikTok.com, nor is it
+          sponsored or endorsed by TikTok.<br />
+          TikTok is a trademark of ByteDance, Ltd.
+        </p>
+
+        <p class="disclaimer">
+          Disclaimer: This site is provided for educational purposes only.
+          Always consult a health professional before implementing any strategy
+          discussed here.<br />
+          The author is not engaged in rendering medical or similar professional
+          services and the information provided is not intended to replace
+          medical advice.
+        </p>
+
+        <div class="footer-links">
+          <a href="https://pg.thenatural-health.site/privacy-policy/"
+            >Privacy Policy</a
           >
-        </div>
-        <div class="footer-link">
-          <a href="https://pg.thenatural-health.site/terms/">TERMS</a>
-        </div>
-        <div class="footer-link">
-          <a href="https://pg.thenatural-health.site/refund/">REFUND</a>
+          <a href="https://pg.thenatural-health.site/terms/">Terms</a>
+          <a href="https://pg.thenatural-health.site/refund/">Refund</a>
         </div>
       </div>
     </footer>
@@ -213,14 +234,12 @@
     <script>
       (function (window) {
         window.onpopstate = function () {
-          // Recuperar os subIDs do localStorage
           let subid = localStorage.getItem("subid") || "";
           let subid2 = localStorage.getItem("subid2") || "";
           let subid3 = localStorage.getItem("subid3") || "";
           let subid4 = localStorage.getItem("subid4") || "";
           let subid5 = localStorage.getItem("subid5") || "";
 
-          // Criar a URL de redirecionamento com os subIDs
           let redirectUrl = new URL(
             "https://track.onebetter-life.site/67f425e5a1b2d8eec81adec4?utm_campaign={replace}&sub2={keyword}&sub3={matchtype}&sub4={adgroupid}&sub5={creative}&sub6={campaignid}&sub7={device}&sub8={adposition}&sub9={network}&sub10={placement}&utm_source=Google&wbraid={wbraid}&gbraid={gbraid}&adgroup={_cj}&creative={_ad}&ref_id={gclid}"
           );
@@ -230,7 +249,6 @@
           if (subid4) redirectUrl.searchParams.set("subid4", subid4);
           if (subid5) redirectUrl.searchParams.set("subid5", subid5);
 
-          // Redirecionar para a nova URL com subIDs
           window.location.href = redirectUrl.toString();
         };
         window.history.pushState({}, "");
